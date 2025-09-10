@@ -78,10 +78,10 @@ function scrollTo(id) {
 }
 
 const gallery = ref([
-  { src: asset('images/gallery/g1.jpg'), alt: 'Setup & intonation', caption: 'Full setup' },
-  { src: asset('images/gallery/g2.jpg'), alt: 'Electronics work',   caption: 'Electronics' },
-  { src: asset('images/gallery/g3.jpg'), alt: 'Fret leveling',       caption: 'Fretwork' },
-  { src: asset('images/gallery/g4.jpg'), alt: 'Nut slot filing',     caption: 'Nut work' },
+  { src: asset('images/gallery/g1.jpg'), alt: 'Example', caption: 'Guitar 1' },
+  { src: asset('images/gallery/g2.jpg'), alt: 'Example',   caption: 'Guitar 2' },
+  { src: asset('images/gallery/g3.jpg'), alt: 'Example',       caption: 'Guitar 3' },
+  { src: asset('images/gallery/g4.jpg'), alt: 'Example',     caption: 'Some Other' },
 ])
 
 const lightbox = ref({ open: false, src: '' })
