@@ -2,12 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Favicon (kept relative so it works on GitHub Pages base path) -->
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue</title>
+    <title>GuitarTechHub — Guitar setups, repairs & custom work</title>
+    <meta name="description" content="Professional guitar setup, repairs & custom work. Keep your instrument playing its best.">
+
+    <!-- If no hash (first visit on GitHub Pages), go to "#/". -->
+    <script>
+      if (!location.hash) location.replace(location.pathname + location.search + "#/");
+    </script>
   </head>
   <body>
     <div id="app"></div>
+    <!-- Vite dev entry (rewritten automatically on build) -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
