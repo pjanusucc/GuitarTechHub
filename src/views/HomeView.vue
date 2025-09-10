@@ -6,7 +6,7 @@
       <h1>Guitar Tech Hub</h1>
       <p>
         Professional guitar setup, repairs & custom work. I keep your instrument
-        playing its best - so you can stay in the creative flow. ( Placeholder)
+        playing its best - so you can stay in the creative flow. (Placeholder)
       </p>
       <div class="hero__cta">
         <a href="#about" @click.prevent="scrollTo('about')" class="btn">Learn more</a>
