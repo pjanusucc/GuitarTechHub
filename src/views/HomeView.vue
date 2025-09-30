@@ -4,90 +4,110 @@
     <img class="hero__img" :src="asset('images/hero.jpg')" alt="Guitar bench and tools" />
     <div class="hero__content reveal fade-up" data-animate>
       <h1>Guitar Tech Hub</h1>
-      <p>Professional setups, fretwork, electronics & custom builds.</p>
+      <p>Professional guitar setup, repairs & custom work.</p>
       <div class="hero__cta">
-        <!-- now scrolls to Services -->
+        <!-- Learn more now scrolls to Services -->
         <a href="#services" @click.prevent="scrollTo('services')" class="btn">Learn more</a>
         <a href="#gallery" @click.prevent="scrollTo('gallery')" class="btn btn--ghost">See gallery</a>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <div class="container">
-      <h2 class="reveal fade-up" data-animate>Services</h2>
-      <p class="muted reveal fade-in" data-animate style="--d:.08s">
-        Essential work to keep your instrument feeling and sounding right.
-      </p>
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="reveal fade-up" data-animate>Services</h2>
 
-      <div class="services">
-        <ul class="services__col">
-          <li class="reveal slide-right" data-animate style="--d:.05s">Setup</li>
-          <li class="reveal slide-right" data-animate style="--d:.10s">Pickup Installation</li>
-          <li class="reveal slide-right" data-animate style="--d:.15s">Truss Rod Adjustment</li>
-          <li class="reveal slide-right" data-animate style="--d:.20s">Structural Repairs</li>
-        </ul>
-        <ul class="services__col">
-          <li class="reveal slide-left" data-animate style="--d:.05s">Fret Work</li>
-          <li class="reveal slide-left" data-animate style="--d:.10s">Electronics</li>
-          <li class="reveal slide-left" data-animate style="--d:.15s">Intonation</li>
-          <li class="reveal slide-left" data-animate style="--d:.20s">Hardware Install</li>
-        </ul>
-      </div>
+    <!-- Intro + pricing note -->
+    <p class="muted reveal fade-in" data-animate style="--d:.08s">
+      Essential work to keep your instrument feeling and sounding right.
+      Prices vary by instrument and scope — 
+      <a href="#contact" @click.prevent="scrollTo('contact')">contact me</a> for a quick quote.
+    </p>
 
-      <!-- Pricing note with inline link to Contact -->
-      <p class="muted reveal fade-in" data-animate style="--d:.25s; margin-top:1rem;">
-        Pricing varies by instrument and scope of work. For an exact estimate,
-        <a href="#contact" @click.prevent="scrollTo('contact')" class="link">contact me</a>.
-      </p>
+    <!-- Service lists -->
+    <div class="services">
+      <ul class="services__col">
+        <li class="reveal slide-right" data-animate style="--d:.05s">Setup</li>
+        <li class="reveal slide-right" data-animate style="--d:.10s">Pickup Installation</li>
+        <li class="reveal slide-right" data-animate style="--d:.15s">Truss Rod Adjustment</li>
+        <li class="reveal slide-right" data-animate style="--d:.20s">Structural Repairs</li>
+      </ul>
+      <ul class="services__col">
+        <li class="reveal slide-left" data-animate style="--d:.05s">Fret Work</li>
+        <li class="reveal slide-left" data-animate style="--d:.10s">Electronics</li>
+        <li class="reveal slide-left" data-animate style="--d:.15s">Intonation</li>
+        <li class="reveal slide-left" data-animate style="--d:.20s">Hardware Install</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- CONTACT (title + copy on the left, two cards side-by-side on the right) -->
-  <section id="contact" class="section section--alt">
-    <div class="container contact">
-      <div class="contact__text reveal fade-up" data-animate>
-        <h2>Contact Me</h2>
-        <p class="muted">
-          Have a question about services or pricing? Get in touch and I’ll get back to you soon.
-        </p>
-      </div>
+    <!-- Post-list reassurance -->
+    <p class="muted reveal fade-in" data-animate style="--d:.24s; margin-top:.5rem;">
+      Need something not listed? <strong>Please get in touch</strong> — I’m continually expanding my services and may be able to help.
+    </p>
+  </div>
+</section>
 
-      <!-- 2-up layout on desktop, stacks automatically on smaller widths -->
-      <div
-        class="contact__methods"
-        :style="{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }"
-      >
-        <a class="contact__row reveal fade-up" data-animate style="--d:.05s" href="tel:0851085441">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1v3.6a1 1 0 01-.9 1A19 19 0 013 5.9a1 1 0 011-1h3.6a1 1 0 011 1c0 1.22.2 2.42.57 3.56a1 1 0 01-.24 1.02l-2.3 2.31z"/>
-            </svg>
-          </span>
-          <span class="contact__label">Phone</span>
-          <span class="contact__value">085 108 5441</span>
-        </a>
+<!-- CONTACT (full-width blurred band over background photo) -->
+<section
+  id="contact"
+  class="section contact-bg"
+  :style="{ '--contact-bg': `url(${asset('images/' + contactBg)})` }"
+>
+  <div class="container">
+    <!-- the band holds the text + the three tiles -->
+    <div class="contact__band reveal fade-up" data-animate>
+      <div class="contact">
+        <div class="contact__text">
+          <h2>Contact Me</h2>
+          <p class="muted">
+            Have a question about services or pricing? Get in touch and I’ll get back to you soon.
+          </p>
+        </div>
 
-        <a
-          class="contact__row reveal fade-up"
-          data-animate
-          style="--d:.10s"
-          href="https://www.instagram.com/miuzikman/"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-              <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1112 18.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM18 6.5a1 1 0 11-1 1 1 1 0 011-1z"/>
-            </svg>
-          </span>
-          <span class="contact__label">Instagram</span>
-          <span class="contact__value link">/miuzikman</span>
-        </a>
+        <div class="contact__methods">
+          <a class="contact__row"
+             :href="whatsAppHref" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true">
+              <!-- WhatsApp -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M20 3.5A10 10 0 1 0 3.5 20L3 22l2-.5A10 10 0 1 0 20 3.5zM12 4a8 8 0 0 1 0 16 7.9 7.9 0 0 1-4.07-1.14L6 19l.86-1.9A7.9 7.9 0 0 1 4 12 8 8 0 0 1 12 4zm4.46 9.74c-.26-.13-1.53-.75-1.77-.83s-.41-.13-.59.13-.68.83-.83 1-.31.19-.57.06a6.49 6.49 0 0 1-1.9-1.17 7 7 0 0 1-1.29-1.6c-.14-.26 0-.4.1-.53s.26-.31.4-.48.19-.26.29-.43a.5.5 0 0 0 0-.48c-.06-.13-.59-1.42-.81-1.94s-.43-.45-.59-.46h-.5a1 1 0 0 0-.73.34c-.25.26-1 1-1 2.38s1.06 2.76 1.21 2.95a9.6 9.6 0 0 0 3.66 3.25 12.46 12.46 0 0 0 1.24.46 3 3 0 0 0 1.38.09c.42-.06 1.3-.53 1.48-1.06s.18-1 .13-1.06-.22-.16-.48-.29z"/>
+              </svg>
+            </span>
+            <span class="contact__label">WhatsApp</span>
+            <span class="contact__value">+353 85 108 5441</span>
+          </a>
+
+          <a class="contact__row"
+             href="https://www.instagram.com/miuzikman/" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true">
+              <!-- Instagram -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1112 18.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM18 6.5a1 1 0 11-1 1 1 1 0 011-1z"/>
+              </svg>
+            </span>
+            <span class="contact__label">Instagram</span>
+            <span class="contact__value link">/miuzikman</span>
+          </a>
+
+          <a class="contact__row" href="mailto:p.janusso@yahoo.co.uk">
+            <span class="icon" aria-hidden="true">
+              <!-- Email -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 6 8-6v10H4z"/>
+              </svg>
+            </span>
+            <span class="contact__label">Email</span>
+            <span class="contact__value link">p.janusso@yahoo.co.uk</span>
+          </a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+
+
 
   <!-- ABOUT -->
   <section id="about" class="section section--dark">
@@ -116,7 +136,7 @@
     </div>
   </section>
 
-  <!-- GALLERY (continuous carousel, no subheading) -->
+  <!-- GALLERY (continuous carousel) -->
   <section id="gallery" class="section section--alt">
     <div class="container">
       <h2 class="reveal fade-up" data-animate>Gallery</h2>
@@ -195,8 +215,14 @@ const prefersReduced =
   window.matchMedia &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-// speed tuning (px/sec) – slight bump for smoothness
+// speed tuning (px/sec)
 let baseSpeed = prefersReduced ? 0 : 105
+
+const contactBg = 'about3.jpg'
+
+// WhatsApp deep link (E.164 format, no spaces)
+const waNumber = '353851085441'
+const whatsAppHref = `https://wa.me/${waNumber}`
 
 // ticker state
 let offset = 0
@@ -269,8 +295,8 @@ function syncAboutHeights() {
   const stacked = window.matchMedia('(max-width: 900px)').matches
   if (stacked) {
     mediaEl.style.height = 'auto'
-    const imgM = mediaEl.querySelector('img')
-    if (imgM && imgM.style) imgM.style.removeProperty('height')
+    const imgMobile = mediaEl.querySelector('img')
+    if (imgMobile && imgMobile.style) imgMobile.style.removeProperty('height')
     return
   }
 

@@ -255,40 +255,109 @@
     .services { grid-template-columns: 1fr; }
   }
   
-  /* ===== CONTACT ===== */
+/* ===== CONTACT (photo background + full-width blurred band) ===== */
+.contact-bg {
+    position: relative;
+    overflow: hidden;
+    --band-bg: rgba(15,15,15,.30);     /* darkness over the blur */
+    --band-radius: 16px;
+    --band-pad: 1.25rem;
+  }
+  
+  /* background image with a gentle dark gradient for overall contrast */
+  .contact-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(
+        0deg,
+        rgba(15,15,15,.35) 0%,
+        rgba(15,15,15,.20) 60%,
+        rgba(15,15,15,.35) 100%
+      ),
+      var(--contact-bg);
+    background-size: cover;
+    background-position: center;
+    filter: saturate(.95) contrast(.97);
+    z-index: 0;
+  }
+  
+  /* keep the contents above the photo */
+  .contact-bg .container { position: relative; z-index: 1; }
+  
+  /* THE BLURRED BAND – spans the full container width */
+  .contact__band {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: var(--band-bg);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--band-radius);
+    box-shadow: 0 10px 28px rgba(0,0,0,.3);
+    padding: calc(var(--band-pad) + .25rem);
+  }
+  
+  /* layout inside the band */
   .contact {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 2rem;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
-  .contact__methods { display: grid; gap: .75rem; }
+  
+  .contact__text h2 { color: #fff; }
+  .contact__text .muted { color: #f0f0f0; }
+  
+  /* three tiles side-by-side on wide screens, wrap on smaller */
+  .contact__methods {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: .8rem;
+  }
+  
+  @media (max-width: 1100px) {
+    .contact__methods { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+  }
+  @media (max-width: 680px) {
+    .contact__methods { grid-template-columns: 1fr; }
+  }
+  
+  /* tiles */
   .contact__row {
     display: grid;
-    grid-template-columns: 26px 110px 1fr;
+    grid-template-columns: 26px auto 1fr;
     align-items: center;
     gap: .6rem;
-    padding: .8rem 1rem;
+    padding: .85rem 1rem;
     background: #fff;
     border: 1px solid #eee;
     border-radius: 12px;
-    text-decoration: none;
     color: #222;
+    text-decoration: none;
+    min-width: 0;                  /* allow truncation */
   }
   .contact__row:hover {
     border-color: #ddd;
-    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
   }
+  
   .icon { display: grid; place-items: center; opacity: .85; }
-  .contact__label { color: #666; }
+  .contact__label { color: #666; white-space: nowrap; }
+  .contact__value { 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .contact__value.link { color: #0ea5a2; font-weight: 700; }
   
-  /* ===== Responsive breakpoints ===== */
-  @media (max-width: 900px) {
-    .grid { grid-template-columns: 1fr; }
-    .grid__media img { height: auto; }
-    .contact { grid-template-columns: 1fr; }
+  /* mobile adjustments: stronger overlay for tiny text */
+  @media (max-width: 700px) {
+    .contact__band {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: rgba(15,15,15,.40);
+    }
   }
+  
   
   /* ===== Reveal-on-scroll animations ===== */
   .reveal {
