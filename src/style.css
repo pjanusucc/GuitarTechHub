@@ -47,9 +47,8 @@ img { max-width: 100%; display: block; }
 
 /* Centered nav (desktop) — now includes a Home icon at far left */
 .center-nav {
-  display: none;            /* mobile */
-  justify-content: center;
-  justify-self: center;     
+  display: none;          
+  margin: 0 auto;       
   gap: 1.1rem;
   font-weight: 600;
   align-items: center;
@@ -91,18 +90,29 @@ img { max-width: 100%; display: block; }
 }
 .menu-btn:focus-visible { outline: 2px solid #000; }
 
-/* Responsive header behavior */
+/* mobile header layout: home | menu */
 @media (max-width: 900px) {
   .site-header .inner { grid-template-columns: 1fr auto; }
-  .center-nav { display: none; }
-  .menu-btn   { display: inline-flex; }
-  .mobile-only { display: inline-flex; }
+}
+
+/* desktop header layout: [empty]  |  center-nav  |  [empty] */
+@media (min-width: 901px) {
+  .center-nav {
+    display: flex;          /* already in your CSS */
+    grid-column: 2;         /* <-- force the nav into the middle 'auto' column */
+    justify-self: center;   /* <-- center the nav inside that column */
+  }
+}
+
+@media (max-width: 900px) {
+  .center-nav   { display: none; }
+  .menu-btn     { display: inline-flex; }
+  .mobile-only  { display: inline-flex; }
   .desktop-only { display: none; }
 }
 @media (min-width: 901px) {
-  .center-nav { display: flex; }
-  .menu-btn   { display: none; }
-  .mobile-only { display: none; }
+  .menu-btn     { display: none; }
+  .mobile-only  { display: none; }
   .desktop-only { display: inline-flex; }
 }
 
