@@ -31,9 +31,12 @@
         <p class="section-kicker">Services</p>
         <h2>Practical work that makes your instrument play better.</h2>
         <p class="muted">
-          Prices vary by instrument and scope. Message me with your guitar model and what needs doing,
-          and I’ll do my best to provide you with a quote.
-        </p>
+  Based in Cork City, GuitarTechHub provides guitar setups, repairs, maintenance,
+  electronics work, fret work and hardware installation for players in Cork and
+  across Ireland where practical. Prices vary by instrument and scope, so message
+  me with your guitar model and what needs doing, and I’ll do my best to provide
+  you with a quote.
+</p>
       </div>
 
       <div class="service-grid">
