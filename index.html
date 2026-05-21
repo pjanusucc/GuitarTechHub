@@ -2,25 +2,129 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <!-- Roboto font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800;900&display=swap"
       rel="stylesheet"
     />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GuitarTechHub - Guitar setups, repairs & custom work</title>
-    <meta name="description" content="Professional guitar setup, repairs & custom work. Keep your instrument playing its best.">
+
+    <!-- Main SEO -->
+    <title>GuitarTechHub - Guitar setup and repairs in Cork City</title>
+
+    <meta
+      name="description"
+      content="GuitarTechHub provides guitar setup, repair, maintenance, electronics, fret work and hardware installation services in Cork City, Ireland."
+    />
+
+    <meta
+      name="keywords"
+      content="guitar setup Cork, guitar repair Cork, guitar technician Cork, guitar tech Cork, guitar maintenance Cork, guitar electronics Cork, fret work Cork, guitar repairs Ireland"
+    />
+
+    <link rel="canonical" href="https://guitartechhub.ie/" />
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
+    <meta property="og:title" content="GuitarTechHub - Guitar setup and repairs in Cork City" />
+    <meta
+      property="og:description"
+      content="Professional guitar setup, repair, maintenance, electronics, fret work and hardware installation services in Cork City."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://guitartechhub.ie/" />
+    <meta property="og:image" content="https://guitartechhub.ie/images/hero.jpg" />
+    <meta property="og:site_name" content="GuitarTechHub" />
+    <meta property="og:locale" content="en_IE" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GuitarTechHub - Guitar setup and repairs in Cork City" />
+    <meta
+      name="twitter:description"
+      content="Professional guitar setup, repair, maintenance, electronics, fret work and hardware installation services in Cork City."
+    />
+    <meta name="twitter:image" content="https://guitartechhub.ie/images/hero.jpg" />
+
+    <!-- Theme colour for mobile browser UI -->
+    <meta name="theme-color" content="#111111" />
+
+    <!-- Local business structured data for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "GuitarTechHub",
+        "url": "https://guitartechhub.ie/",
+        "image": "https://guitartechhub.ie/images/hero.jpg",
+        "description": "Guitar setup, repair, maintenance, electronics, fret work and hardware installation services in Cork City, Ireland.",
+        "areaServed": {
+          "@type": "City",
+          "name": "Cork"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cork",
+          "addressCountry": "IE"
+        },
+        "telephone": "+353851085441",
+        "sameAs": [
+          "https://www.instagram.com/miuzikman/"
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Guitar setup"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Guitar repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Guitar maintenance"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Guitar electronics and pickup installation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fret work"
+            }
+          }
+        ]
+      }
+    </script>
 
     <!-- If first visit on GitHub Pages without a hash, jump to "#/" so hash router works -->
     <script>
-      if (!location.hash) location.replace(location.pathname + location.search + "#/");
+      if (!location.hash) {
+        location.replace(location.pathname + location.search + "#/");
+      }
     </script>
   </head>
+
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
