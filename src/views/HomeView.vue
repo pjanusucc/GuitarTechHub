@@ -122,23 +122,41 @@
   <section id="about" class="section section--dark">
     <div class="container grid">
       <div class="grid__text reveal slide-right" data-animate ref="aboutText">
-        <p class="section-kicker section-kicker--light">About Me</p>
-        <h2>Careful work, proper attention to detail.</h2>
-        <p>
-          I have always had a deep passion for music and instruments, which has guided both my studies and my career path.
-          After completing a music course at CSN, I went on to study guitar building at St. John’s College, where I earned my
-          QQI Level 6 qualification in Instrument Building and Repair.
-        </p>
-        <p>
-          Through this journey, I’ve developed not only technical skills but also a strong eye for detail, ensuring every
-          instrument I work on receives the highest level of care. My hands-on experience with music and instruments has given
-          me a deep understanding of both their craftsmanship and their role in inspiring creativity.
-        </p>
-        <p>
-          Driven by a genuine love for music and the artistry behind every instrument, I take pride in bringing out the best
-          sound and playability in each piece I repair or build.
-        </p>
-      </div>
+  <p class="section-kicker section-kicker--light">About Me</p>
+  <h2>Careful work, proper attention to detail.</h2>
+
+  <p>
+    My name is Pawel Janus, and I am a musician, luthier and guitar technician based in Shanakiel,
+    Cork, County Cork, Ireland. I have been part of the Cork music scene for many years, not only
+    through instrument work, but also as a live performer, recording musician, promoter and someone
+    who has helped other bands and artists whenever possible.
+  </p>
+
+  <p>
+    Being involved in music from different sides has shaped the way I work. I understand how important
+    an instrument can be, whether it is used for practice at home, studio recording, live shows or regular
+    gigging. My goal is to approach every guitar with the care of a technician and the understanding of
+    a musician.
+  </p>
+
+  <p>
+    I have always had a deep passion for music and instruments, which has guided both my studies and my
+    career path. After completing a music course at CSN, I went on to study guitar building at St. John’s
+    College, where I earned my QQI Level 6 qualification in Instrument Building and Repair.
+  </p>
+
+  <p>
+    Through this journey, I’ve developed not only technical skills but also a strong eye for detail, ensuring
+    every instrument I work on receives the highest level of care. My hands-on experience with music and
+    instruments has given me a deep understanding of both their craftsmanship and their role in inspiring
+    creativity.
+  </p>
+
+  <p>
+    Driven by a genuine love for music and the artistry behind every instrument, I take pride in bringing out
+    the best sound and playability in each piece I repair or build.
+  </p>
+</div>
 
       <div class="grid__media reveal slide-left" data-animate ref="aboutMedia">
         <img :src="asset('images/about.jpg')" alt="At the workbench" />
