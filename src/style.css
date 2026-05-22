@@ -1,13 +1,26 @@
 /* ===== Base reset ===== */
-* { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 74px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   margin: 0;
+  overflow-x: hidden;
   background: #ffffff;
   color: #1a1a1a;
   font-family: "Roboto", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -23,8 +36,13 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+video,
+svg {
   max-width: 100%;
+}
+
+img {
   display: block;
 }
 
@@ -36,8 +54,17 @@ select {
 }
 
 #app {
+  width: 100%;
   max-width: none;
+  min-width: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 /* ===== Header ===== */
@@ -266,13 +293,18 @@ button:focus-visible {
 
 /* ===== Generic helpers ===== */
 .container {
+  width: 100%;
   max-width: 1180px;
+  min-width: 0;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
 .section {
+  width: 100%;
+  min-width: 0;
   padding: 4rem 0;
+  overflow-x: hidden;
 }
 
 .section--alt {
