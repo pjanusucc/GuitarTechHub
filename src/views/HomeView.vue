@@ -128,7 +128,7 @@
   <p>
     My name is Pawel Janus, and I am a musician, luthier and guitar technician based in Shanakiel,
     Cork, County Cork, Ireland. I have been part of the Cork music scene for many years, not only
-    through instrument work, but also as a live performer, recording musician, promoter and someone
+    through instrument work, but also as a live performer, recording musician and someone
     who has helped other bands and artists whenever possible.
   </p>
 
