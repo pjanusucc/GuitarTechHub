@@ -917,6 +917,8 @@
 .review-card__date {
   color: #777;
   font-size: .92rem;
+  font-weight: 700;
+  text-align: right;
   white-space: nowrap;
 }
 
@@ -924,6 +926,89 @@
   color: #444;
   line-height: 1.6;
   margin: .25rem 0 0;
+}
+
+.review-card--customer {
+  display: grid;
+  gap: .9rem;
+}
+
+.review-card__authors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+}
+
+.review-card__person,
+.review-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  color: #0a8f8c;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.review-card__person:hover,
+.review-card__link:hover {
+  text-decoration: underline;
+}
+
+.review-card__date {
+  color: #777;
+  font-size: .92rem;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.instagram-mini {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  fill: currentColor;
+}
+
+.review-card__footer {
+  display: grid;
+  gap: .45rem;
+  padding-top: .85rem;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+.review-card__footer-label {
+  color: #777;
+  font-size: .86rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.review-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .85rem;
+}
+
+.review-card__body {
+  white-space: pre-line;
+}
+
+@media (max-width: 700px) {
+  .review-card__head {
+    display: grid;
+    gap: .35rem;
+  }
+
+  .review-card__date {
+    text-align: left;
+  }
+
+  .review-card__links {
+    display: grid;
+    gap: .45rem;
+  }
 }
 
 @media (max-width: 900px) {

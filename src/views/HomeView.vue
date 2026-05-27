@@ -228,18 +228,58 @@
         <div class="review-section">
           <div class="review-section__head">
             <h3>Customer Reviews</h3>
-            <p>More customer feedback will be added here soon.</p>
+            <p>Feedback from customers, musicians and bands I have worked with.</p>
           </div>
 
           <div class="reviews__grid">
-            <article class="review-card" v-for="review in reviews" :key="review.name">
-              <header class="review-card__head">
-                <strong class="review-card__name">{{ review.name }}</strong>
-                <span class="review-card__date">{{ review.date }}</span>
-              </header>
-              <p class="review-card__body">“{{ review.text }}”</p>
-            </article>
-          </div>
+  <article class="review-card review-card--customer" v-for="review in reviews" :key="review.id">
+    <header class="review-card__head">
+      <div class="review-card__authors">
+        <a
+  v-for="author in review.authors"
+  :key="author.name"
+  class="review-card__person"
+  :href="author.url"
+  target="_blank"
+  rel="noopener"
+>
+  <svg class="instagram-mini" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1112 18.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM18 6.5a1 1 0 11-1 1 1 1 0 011-1z"
+    />
+  </svg>
+  <span>{{ author.name }}</span>
+</a>
+      </div>
+
+      <span class="review-card__date">{{ review.date }}</span>
+    </header>
+
+    <p class="review-card__body">{{ review.text }}</p>
+
+    <footer class="review-card__footer">
+      <span class="review-card__footer-label">{{ review.footerLabel }}</span>
+
+      <div class="review-card__links">
+        <a
+  v-for="link in review.links"
+  :key="link.name"
+  class="review-card__link"
+  :href="link.url"
+  target="_blank"
+  rel="noopener"
+>
+  <svg class="instagram-mini" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1112 18.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM18 6.5a1 1 0 11-1 1 1 1 0 011-1z"
+    />
+  </svg>
+  <span>{{ link.name }}</span>
+</a>
+      </div>
+    </footer>
+  </article>
+</div>
         </div>
       </div>
     </div>
@@ -380,9 +420,74 @@ const trustItems = ref([
 
 const reviews = ref([
   {
-    name: 'Customer Review',
-    date: 'Coming soon',
-    text: 'Currently unavailable.'
+    id: 'alex-worn-out',
+    date: '26/05/2026',
+    authors: [
+      {
+        name: 'Alex',
+        url: 'https://www.instagram.com/alex__dissonance/'
+      }
+    ],
+    text: `"Pawel took care of most of my guitars over the years, always bring them up to par before hitting the road. Fresh strings, fixed intonation, taking care of fretwork as well as cleaning the guitars up to a great standard. On top of that I could always feel in every guitar that I handed him that he just loves working on them Not only is his service top notch, it was always affordable and also delivered fast even when I was a bit strapped for time, something that I greatly appreciate. On top of that it is always great to feel his enthusiasm even when you approach him with projects that seem a bit outlandish first. If you need some solid guitar service from someone who just loves guitars, Pawel is THE go to guy! "`,
+    footerLabel: 'Band',
+    links: [
+      {
+        name: 'Worn Out',
+        url: 'https://www.instagram.com/wornoutnoise/'
+      }
+    ]
+  },
+  {
+    id: 'cian-mullane',
+    date: '26/05/2026',
+    authors: [
+      {
+        name: 'Cian Mullane',
+        url: 'https://www.instagram.com/mvllane/'
+      }
+    ],
+    text: `“Pawel made my gigging guitars more comfortable than ever and brought life back into my older less used instruments”`,
+    footerLabel: 'Bands',
+    links: [
+      {
+        name: 'God Alone',
+        url: 'https://www.instagram.com/god.alone_cork/'
+      },
+      {
+        name: 'Red Sun Alert',
+        url: 'https://www.instagram.com/redsunalert/'
+      },
+      {
+        name: 'Uncultivates',
+        url: 'https://www.instagram.com/uncultivates/'
+      },
+      {
+        name: 'Last Call',
+        url: 'https://www.instagram.com/lastcall_theband/'
+      }
+    ]
+  },
+  {
+    id: 'vince-noel-following-the-signs',
+    date: '27/05/2026',
+    authors: [
+      {
+        name: 'Vince',
+        url: 'https://www.instagram.com/ton6gro2c'
+      },
+      {
+        name: 'Noel',
+        url: 'https://www.instagram.com/noelc_99/'
+      }
+    ],
+    text: `“We needed to change the settings on our LTD H-330 FMNT and Ltd EC-1000B, and Pawel really listened to what we wanted. He adjusted the guitars exactly to our own needs, and now they feel amazing to play. Since then, we've kept coming back for anything guitar-related.”`,
+    footerLabel: 'Band',
+    links: [
+      {
+        name: 'Following the Signs',
+        url: 'https://www.instagram.com/followingthesigns.cork/'
+      }
+    ]
   }
 ])
 
