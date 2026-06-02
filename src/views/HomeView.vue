@@ -226,61 +226,65 @@
         </div>
 
         <div class="review-section">
-          <div class="review-section__head">
-            <h3>Customer Reviews</h3>
-            <p>Feedback from customers, musicians and bands I have worked with.</p>
-          </div>
+  <div class="review-section__head">
+    <h3>Customer Reviews</h3>
+    <p>Feedback from customers, musicians and bands I have worked with.</p>
+  </div>
 
-          <div class="reviews__grid">
-  <article class="review-card review-card--customer" v-for="review in reviews" :key="review.id">
-    <header class="review-card__head">
-      <div class="review-card__authors">
-        <a
-  v-for="author in review.authors"
-  :key="author.name"
-  class="review-card__person"
-  :href="author.url"
-  target="_blank"
-  rel="noopener"
->
-  <svg class="instagram-mini" viewBox="0 0 24 24" aria-hidden="true">
-    <path
-      d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1112 18.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM18 6.5a1 1 0 11-1 1 1 1 0 011-1z"
-    />
-  </svg>
-  <span>{{ author.name }}</span>
-</a>
-      </div>
-
-      <span class="review-card__date">{{ review.date }}</span>
-    </header>
-
-    <p class="review-card__body">{{ review.text }}</p>
-
-    <footer class="review-card__footer">
-      <span class="review-card__footer-label">{{ review.footerLabel }}</span>
-
-      <div class="review-card__links">
-        <a
-  v-for="link in review.links"
-  :key="link.name"
-  class="review-card__link"
-  :href="link.url"
-  target="_blank"
-  rel="noopener"
->
-  <svg class="instagram-mini" viewBox="0 0 24 24" aria-hidden="true">
-    <path
-      d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1112 18.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM18 6.5a1 1 0 11-1 1 1 1 0 011-1z"
-    />
-  </svg>
-  <span>{{ link.name }}</span>
-</a>
-      </div>
-    </footer>
-  </article>
-</div>
+  <div class="reviews__grid">
+    <article
+      class="review-card review-card--customer"
+      v-for="review in sortedReviews"
+      :key="review.id"
+    >
+      <header class="review-card__head">
+        <div class="review-card__authors">
+          <a
+            v-for="author in review.authors"
+            :key="author.name"
+            class="review-card__person"
+            :href="author.url"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="instagram-mini" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1112 18.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM18 6.5a1 1 0 11-1 1 1 1 0 011-1z"
+              />
+            </svg>
+            <span>{{ author.name }}</span>
+          </a>
         </div>
+
+        <span class="review-card__date">{{ review.date }}</span>
+      </header>
+
+      <p class="review-card__body">{{ review.text }}</p>
+
+      <footer class="review-card__footer">
+        <span class="review-card__footer-label">{{ review.footerLabel }}</span>
+
+        <div class="review-card__links">
+          <a
+            v-for="link in review.links"
+            :key="link.name"
+            class="review-card__link"
+            :href="link.url"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="instagram-mini" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1112 18.5 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM18 6.5a1 1 0 11-1 1 1 1 0 011-1z"
+              />
+            </svg>
+            <span>{{ link.name }}</span>
+          </a>
+        </div>
+      </footer>
+    </article>
+  </div>
+</div>
       </div>
     </div>
   </section>
@@ -421,6 +425,8 @@ const trustItems = ref([
 const reviews = ref([
   {
     id: 'alex-worn-out',
+    sortDate: '2026-05-26',
+    sortOrder: 4,
     date: '26/05/2026',
     authors: [
       {
@@ -439,6 +445,8 @@ const reviews = ref([
   },
   {
     id: 'cian-mullane',
+    sortDate: '2026-05-26',
+    sortOrder: 3,
     date: '26/05/2026',
     authors: [
       {
@@ -469,6 +477,8 @@ const reviews = ref([
   },
   {
     id: 'vince-noel-following-the-signs',
+    sortDate: '2026-05-27',
+    sortOrder: 2,
     date: '27/05/2026',
     authors: [
       {
@@ -488,8 +498,40 @@ const reviews = ref([
         url: 'https://www.instagram.com/followingthesigns.cork/'
       }
     ]
+  },
+  {
+    id: 'ben-opw',
+    sortDate: '2026-06-02',
+    sortOrder: 1,
+    date: '02/06/2026',
+    authors: [
+      {
+        name: 'Ben',
+        url: 'https://www.instagram.com/forgingphysiques/'
+      }
+    ],
+    text: `"Pawel is the only guitar tech I’ll trust with my guitars. They come back perfect and playing like a dream. I cannot recommend him highly enough!"`,
+    footerLabel: 'Band',
+    links: [
+      {
+        name: 'OPW',
+        url: 'https://www.instagram.com/opwband/'
+      }
+    ]
   }
 ])
+
+const sortedReviews = computed(() => {
+  return [...reviews.value].sort((a, b) => {
+    const dateCompare = b.sortDate.localeCompare(a.sortDate)
+
+    if (dateCompare !== 0) {
+      return dateCompare
+    }
+
+    return a.sortOrder - b.sortOrder
+  })
+})
 
 const contactBg = 'about3.jpg'
 const waNumber = '353851085441'
