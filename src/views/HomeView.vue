@@ -518,7 +518,27 @@ const reviews = ref([
         url: 'https://www.instagram.com/opwband/'
       }
     ]
-  }
+  },
+  {
+  id: 'emmet-rpc',
+  sortDate: '2026-06-10',
+  sortOrder: 0,
+  date: '10/06/2026',
+  authors: [
+    {
+      name: 'Emmet',
+      url: 'https://www.instagram.com/emmet_hickey.jpg/'
+    }
+  ],
+  text: `"Absolutely bang on job done by Pawel on my bass. It’s sounding, looking and feeling better than it ever has before, could not recommend him more for breathing new life into your instrument"`,
+  footerLabel: 'Band',
+  links: [
+    {
+      name: 'RPC',
+      url: 'https://www.instagram.com/rpc.band/'
+    }
+  ]
+}
 ])
 
 const sortedReviews = computed(() => {
